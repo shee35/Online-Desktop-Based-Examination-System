@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -6,19 +5,19 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-import java.awt.Component;
-import javax.swing.border.BevelBorder;
-import java.awt.Point;
 import java.awt.Font;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Color;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 
 public class Home extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
@@ -53,6 +52,13 @@ public class Home extends JFrame {
 		
 		JButton btnNewButton = new JButton("ADMIN");
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 27));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Admin_info k = new Admin_info();
+				k.setVisible(true);
+			}
+		});
 		
 		JButton btnNewButton_1 = new JButton("STUDENT");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -88,5 +94,33 @@ public class Home extends JFrame {
 					.addContainerGap(142, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
+		
+		
+		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 27));
+		GroupLayout gl_contentPane2 = new GroupLayout(contentPane);
+		gl_contentPane2.setHorizontalGroup(
+			gl_contentPane2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane2.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 795, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+				.addGroup(Alignment.TRAILING, gl_contentPane2.createSequentialGroup()
+					.addGap(269)
+					.addGroup(gl_contentPane2.createParallelGroup(Alignment.TRAILING)
+						.addComponent(btnNewButton_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+						.addComponent(btnNewButton, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addGap(266))
+		);
+		gl_contentPane2.setVerticalGroup(
+			gl_contentPane2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane2.createSequentialGroup()
+					.addComponent(lblNewLabel)
+					.addGap(109)
+					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
+					.addGap(76)
+					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(142, Short.MAX_VALUE))
+		);
+		contentPane.setLayout(gl_contentPane2);
 	}
 }
