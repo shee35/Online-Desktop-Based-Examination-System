@@ -6,7 +6,13 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Arrays;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -78,6 +84,27 @@ public class Student_info extends JFrame {
 		
 		JButton btnNewButton = new JButton("Sign In");
 		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+		
+		btnNewButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if(textField.getText().equals("aarushi")&& textField_1.getText().equals("iit2019032") &&
+						Arrays.equals( "xxx".toCharArray(), passwordField.getPassword() )){
+					dispose();
+					InstructionPage s = new InstructionPage();
+					s.setVisible(true);
+				}
+				else {
+					JFrame j1 = new JFrame("invalid Details");
+					 JOptionPane.showMessageDialog(j1,"Invalid details please check and enter again.");
+					 textField.setText("");textField_1.setText("");passwordField.setText("");
+				}
+			}
+			
+		});
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
