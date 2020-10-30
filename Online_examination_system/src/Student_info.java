@@ -22,7 +22,7 @@ import javax.swing.JButton;
 public class Student_info extends JFrame {
 
 	/**
-	 * 
+	 * Declaration
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
