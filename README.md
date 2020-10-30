@@ -20,14 +20,14 @@ The Software should serve the purpose of examining the students Online and
 
 ## Student Taking Exam Screen: 
 Various Fields are:
-*Display Of Question With Options
-*Control Buttons To switch questions
-*A button to bookmark the question
+* Display Of Question With Options
+* Control Buttons To switch questions
+* A button to bookmark the question
 
 ## Result Displaying Screen: 
 Various Fields are:
-*Total Marks
-*Result(Correct/Incorrect)
+* Total Marks
+* Result(Correct/Incorrect)
 
 ## Submission
 The project presentation has to be done by each member to show periodically the progress and the complete project submission should contain the following:
