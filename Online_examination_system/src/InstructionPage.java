@@ -53,7 +53,7 @@ public class InstructionPage extends JFrame {
 				+"gradually the level of question will increase."+"<br/>ALL THE BEST!!</html>");
 		text1.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		JButton button1 = new JButton("continue");
+		JButton button1 = new JButton("Click here to begin");
 		button1.setFont(new Font("Times New Roman", Font.PLAIN, 25));
 		
 		GroupLayout gl_contentPane = new GroupLayout(panel1);
