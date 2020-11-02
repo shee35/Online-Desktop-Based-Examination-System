@@ -76,7 +76,7 @@ public class Home extends JFrame {
 		JButton btnNewButton_2 = new JButton("Exit");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int x=JOptionPane.showConfirmDialog(null,"Do you want to exist the Portal","Select",JOptionPane.YES_NO_OPTION);
+				int x=JOptionPane.showConfirmDialog(null,"Do you want to exit the Portal?","Select",JOptionPane.YES_NO_OPTION);
 				if(x==0)
 					System.exit(0);
 			}

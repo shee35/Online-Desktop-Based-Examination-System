@@ -26,6 +26,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JCheckBox;
 import java.awt.Dimension;
+import java.awt.Component;
 
 public class Student_info extends JFrame {
 
@@ -60,13 +61,14 @@ public class Student_info extends JFrame {
 	 * Create the frame.
 	 */
 	public Student_info() {
+		setUndecorated(true);
 		setExtendedState(Frame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1200, 800);
 		contentPane = new JPanel(){  
             public void paintComponent(Graphics g) {  
               Image img = Toolkit.getDefaultToolkit().getImage(  
-                        Home.class.getResource("/StudentBg.jpg"));  
+                        Home.class.getResource("/studentbg (2).jpg"));  
                  g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);  
              }  
     }; 
@@ -75,6 +77,7 @@ public class Student_info extends JFrame {
 		getContentPane().setLayout(null);
 		
 		textField = new JTextField();
+		textField.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		textField.setColumns(10);
 		
@@ -149,20 +152,19 @@ public class Student_info extends JFrame {
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap(667, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_2))
-					.addGap(63)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-							.addComponent(chckbxNewCheckBox, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
-							.addComponent(textField_1, Alignment.TRAILING)
-							.addComponent(textField, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 253, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(45)
-							.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 155, GroupLayout.PREFERRED_SIZE))
-						.addComponent(passwordField, GroupLayout.PREFERRED_SIZE, 253, GroupLayout.PREFERRED_SIZE))
+						.addComponent(lblNewLabel_2)
+						.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
+					.addGap(42)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(chckbxNewCheckBox, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
+								.addComponent(textField_1, Alignment.TRAILING)
+								.addComponent(textField, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 253, GroupLayout.PREFERRED_SIZE))
+							.addComponent(passwordField, GroupLayout.PREFERRED_SIZE, 253, GroupLayout.PREFERRED_SIZE))
+						.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 155, GroupLayout.PREFERRED_SIZE))
 					.addGap(46))
 		);
 		gl_contentPane.setVerticalGroup(
@@ -186,7 +188,7 @@ public class Student_info extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(177, Short.MAX_VALUE))
+					.addContainerGap(175, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 		contentPane.setVisible(true);
