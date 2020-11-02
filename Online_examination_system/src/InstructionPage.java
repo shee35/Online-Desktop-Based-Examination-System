@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.EmptyBorder;
+import java.awt.Frame;
 
 public class InstructionPage extends JFrame {
 
@@ -36,6 +37,7 @@ public class InstructionPage extends JFrame {
 	}
 	
 	InstructionPage(){
+		setExtendedState(Frame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 857, 588);
 		panel1 = new JPanel();

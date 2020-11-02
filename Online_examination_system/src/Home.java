@@ -2,33 +2,23 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JRootPane;
 import javax.swing.border.EmptyBorder;
 
 import java.awt.Toolkit;
 import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
 
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
-import javax.swing.AbstractButton;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.Icon;
-import javax.swing.JTextField;
 import java.awt.Color;
-import java.awt.Dimension;
 
 import javax.swing.ImageIcon;
+import java.awt.SystemColor;
 
 public class Home extends JFrame {
 
@@ -75,7 +65,7 @@ public class Home extends JFrame {
 		setContentPane(contentPane);
 		getContentPane().setLayout(null);
 		JButton btnNewButton_1 = new JButton("Admin");
-		btnNewButton_1.setBackground(Color.WHITE);
+		btnNewButton_1.setBackground(null);
 		btnNewButton_1.setIcon(null);
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_1.setBounds(800, 42, 154, 58);
@@ -91,7 +81,7 @@ public class Home extends JFrame {
 					System.exit(0);
 			}
 		});
-		btnNewButton_2.setBackground(Color.WHITE);
+		btnNewButton_2.setBackground(null);
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_2.setBounds(1000, 42, 154, 58);
 		Image image3=new ImageIcon(this.getClass().getResource("/Close-icon.png")).getImage();
@@ -99,7 +89,7 @@ public class Home extends JFrame {
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton = new JButton("Student"); 
-		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setBackground(null);
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.setIcon(null);
 		btnNewButton.setBounds(600, 42, 154, 58);
