@@ -25,7 +25,6 @@ class Test extends JFrame implements ActionListener
     	
     	
         super(s);  
-        setExtendedState(Frame.MAXIMIZED_BOTH);
         contentPane = new JPanel(){  
             public void paintComponent(Graphics g) {  
               Image img = Toolkit.getDefaultToolkit().getImage(  
@@ -48,14 +47,15 @@ getContentPane().setLayout(null);
             getContentPane().add(jb[i]);  
             bg.add(jb[i]);  
         }  
-        b1=new JButton("Bookmark");  
+        b1=new JButton("Next");  
         b1.setFont(new Font("Times New Roman", Font.BOLD, 15));
-        b2=new JButton("Next");  
-        b2.setFont(new Font("Times New Roman", Font.BOLD, 14));
+        b2=new JButton("Bookmark");  
+        b2.setFont(new Font("Times New Roman", Font.BOLD, 15));
         Image image3=new ImageIcon(this.getClass().getResource("/Next-icon.png")).getImage();
-		b2.setIcon(new ImageIcon(image3));
+		b1.setIcon(new ImageIcon(image3));
 		Image image4=new ImageIcon(this.getClass().getResource("/Bookmark-icon.png")).getImage();
-		b1.setIcon(new ImageIcon(image4));
+		b2.setIcon(new ImageIcon(image4));
+        
         b1.addActionListener(this);  
         b2.addActionListener(this); 
         
@@ -92,8 +92,8 @@ getContentPane().setLayout(null);
         jb[3].setBounds(50,170,100,20);  
         
         
-        b1.setBounds(69,240,150,41);  
-        b2.setBounds(270,240,150,41);
+        b1.setBounds(272,242,150,41);  
+        b2.setBounds(69,242,150,41);
         
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
