@@ -65,6 +65,13 @@ public class InstructionPage extends JFrame {
 		getContentPane().add(txtrreadTheQuestions);
 		
 		JButton btnNewButton = new JButton("Click here to Begin!");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Test t = new Test("ONLINE DESKTOP PORTAL");
+				t.setVisible(true);
+			}
+		});
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnNewButton.setBounds(10, 387, 260, 49);
 		getContentPane().add(btnNewButton);
