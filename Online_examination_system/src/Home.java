@@ -33,7 +33,9 @@ import javax.swing.ImageIcon;
 public class Home extends JFrame {
 
 	/**
-	 * 
+	 *     
+	 *     
+	 *     
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -65,7 +67,7 @@ public class Home extends JFrame {
 		contentPane = new JPanel(){  
 			                public void paintComponent(Graphics g) {  
 		                      Image img = Toolkit.getDefaultToolkit().getImage(  
-		                                Home.class.getResource("/HomeBg.jpg"));  
+		                                Home.class.getResource("HomeBg.jpg"));  
 			                     g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);  
 			                 }  
 		            };  
@@ -79,7 +81,7 @@ public class Home extends JFrame {
 		btnNewButton_1.setIcon(null);
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_1.setBounds(800, 42, 154, 58);
-		Image image2=new ImageIcon(this.getClass().getResource("/Admin-icon.png")).getImage();
+		Image image2=new ImageIcon(this.getClass().getResource("Admin-icon.png")).getImage();
 		btnNewButton_1.setIcon(new ImageIcon(image2));
 		contentPane.add(btnNewButton_1);
 		
@@ -94,7 +96,7 @@ public class Home extends JFrame {
 		btnNewButton_2.setBackground(Color.WHITE);
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_2.setBounds(1000, 42, 154, 58);
-		Image image3=new ImageIcon(this.getClass().getResource("/Close-icon.png")).getImage();
+		Image image3=new ImageIcon(this.getClass().getResource("Close-icon.png")).getImage();
 		btnNewButton_2.setIcon(new ImageIcon(image3));
 		contentPane.add(btnNewButton_2);
 		
@@ -103,7 +105,7 @@ public class Home extends JFrame {
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.setIcon(null);
 		btnNewButton.setBounds(600, 42, 154, 58);
-		Image image1=new ImageIcon(this.getClass().getResource("/StudentLogin.jpg")).getImage();
+		Image image1=new ImageIcon(this.getClass().getResource("StudentLogin.jpg")).getImage();
 		btnNewButton.setIcon(new ImageIcon(image1));
 		contentPane.add(btnNewButton);
 		
