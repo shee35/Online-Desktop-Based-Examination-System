@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import javax.swing.SwingConstants;
@@ -41,6 +42,9 @@ public class Student_info extends JFrame {
 	private JTextField textField_1;
 	private JPasswordField passwordField;
 
+	ArrayList<String> nameList;
+	ArrayList<String> idList;
+	ArrayList<String> passList;
 	/**
 	 * Launch the application.
 	 */
@@ -61,6 +65,11 @@ public class Student_info extends JFrame {
 	 * Create the frame.
 	 */
 	public Student_info() {
+		
+		nameList = new ArrayList<String>(); nameList.add("aarushi"); nameList.add("vidushi");nameList.add("medha");nameList.add("jyotika");
+		passList = new ArrayList<String>(); passList.add("xxx32"); passList.add("medhullah"); passList.add("shinchan"); passList.add("doraemon");
+		idList = new ArrayList<String>(); idList.add("iit2019032"); idList.add("iit2019027");idList.add("iit2019021"); idList.add("iit2019036");
+		
 		setUndecorated(true);
 		setExtendedState(Frame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -106,15 +115,26 @@ public class Student_info extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if(textField.getText().equals("aarushi")&& textField_1.getText().equals("iit2019032") &&
-						Arrays.equals( "xxx".toCharArray(), passwordField.getPassword() )){
-					dispose();
-					InstructionPage s = new InstructionPage();
-					s.setVisible(true);
+				String a = textField.getText();
+				String b = textField_1.getText();
+				char[] c = passwordField.getPassword();
+				if(nameList.contains(a)) {
+					int find = nameList.indexOf(a);
+					String xx = passList.get(find);
+					if(idList.get(find).equals(b) && Arrays.equals(xx.toCharArray(), c)){
+						dispose();
+						InstructionPage s = new InstructionPage();
+						s.setVisible(true);
+					}
+					else {
+						JFrame j1 = new JFrame("invalid Details");
+						 JOptionPane.showMessageDialog(j1,"Invalid id or password");
+						 textField_1.setText("");passwordField.setText("");
+					}
 				}
 				else {
-					JFrame j1 = new JFrame("invalid Details");
-					 JOptionPane.showMessageDialog(j1,"Invalid details please check and enter again.");
+					JFrame j1 = new JFrame("Registration Issue");
+					 JOptionPane.showMessageDialog(j1,"Student not registered for test");
 					 textField.setText("");textField_1.setText("");passwordField.setText("");
 				}
 			}
