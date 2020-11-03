@@ -125,7 +125,7 @@ getContentPane().setLayout(null);
         if(e.getActionCommand().equals("Bookmark"))  
         {  
             JButton bk=new JButton("Bookmark"+x);  
-            bk.setBounds(480,20+30*x,100,30);  
+            bk.setBounds(800,20+30*x,100,30);  
             getContentPane().add(bk);  
             bk.addActionListener(this);  
             m[x]=question_number;  
