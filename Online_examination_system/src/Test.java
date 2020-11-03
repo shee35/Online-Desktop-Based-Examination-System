@@ -14,31 +14,92 @@ class Test extends JFrame implements ActionListener
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	JLabel l;  
-    JRadioButton jb[]=new JRadioButton[5];  
+    JRadioButton jb[]=new JRadioButton[5];   
     JButton b1,b2,btnNewButton_1;  
     ButtonGroup bg;  
-    
+    public int min=0;
+    public int sec=0;
+    public int flag=0;
+    Timer time;
     int count=0,question_number=0,x=1,y=1,now=0;  
     int m[]=new int[10];   
-    
+    public Test() {
+    	setLocationRelativeTo(this);
+    	
+    }
     public Test(String s)  
     {  
     	
     	
     	
         super(s);  
+        setExtendedState(Frame.MAXIMIZED_BOTH);
         contentPane = new JPanel(){  
-            public void paintComponent(Graphics g) {  
-              Image img = Toolkit.getDefaultToolkit().getImage(  
-                        Home.class.getResource("/HomeBg.jpg"));  
-                 g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);  
-             }  
-    };  
-contentPane.setBackground(Color.WHITE);
-contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+//            public void paintComponent(Graphics g) {  
+//              Image img = Toolkit.getDefaultToolkit().getImage(  
+//                        Home.class.getResource("/HomeBg.jpg"));  
+//                 g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);  
+//             } 
+        };
+        // CODE FOR TIMER STARTS
+        	JLabel lblNewLabel = new JLabel("Total Time:");
+            lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
+            lblNewLabel.setBounds(950, 33, 105, 25);
+            contentPane.add(lblNewLabel);
+            
+            JLabel lblNewLabel_1 = new JLabel("10 Min");
+            lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+            lblNewLabel_1.setBounds(1097, 33, 63, 25);
+            contentPane.add(lblNewLabel_1);
+            
+            JLabel lblNewLabel_2 = new JLabel("Time Taken:");
+            lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 15));
+            lblNewLabel_2.setBounds(950, 71, 105, 14);
+            contentPane.add(lblNewLabel_2);
+            
+            JLabel lblNewLabel_3 = new JLabel("0");
+            lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 15));
+            lblNewLabel_3.setBounds(1097, 71, 26, 14);
+            contentPane.add(lblNewLabel_3);
+            
+            JLabel lblNewLabel_4 = new JLabel("0");
+            lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 15));
+            lblNewLabel_4.setBounds(1133, 71, 27, 14);
+            contentPane.add(lblNewLabel_4);
+            
+        	time = new Timer(1000, new ActionListener() {
 
-setContentPane(contentPane);
-getContentPane().setLayout(null);
+    			@Override
+    			public void actionPerformed(ActionEvent e) {
+    				// TODO Auto-generated method stub
+    				lblNewLabel_4.setText(String.valueOf(sec));
+    				lblNewLabel_3.setText(String.valueOf(min));
+    				if(sec==60) {
+    					sec=0;
+    					min++;
+    					if(min==10) {
+    						time.stop();
+    						b1.setEnabled(false);  
+    		                b2.setText("Result"); 
+    		                JOptionPane.showMessageDialog(contentPane,"Time is over. Click on result button to view the result");
+    		                flag=1;
+    					}
+    				}
+    				sec++;
+    			}
+        		
+        	});
+        	time.start();
+        	//CODE FOR TIMER ENDS
+    
+    setContentPane(contentPane);
+    getContentPane().setLayout(null);
+    setBounds(100,100,1500,1000);
+    contentPane.setBackground(Color.WHITE);
+    contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+
+
         l=new JLabel();  
         getContentPane().add(l); 
        //l.setSize(300,300);
@@ -88,11 +149,11 @@ getContentPane().setLayout(null);
         getContentPane().add(b1);getContentPane().add(b2);  
         questionset();  
         l.setBounds(30,50,910,25);  
-        l.setForeground(Color.white);
-        jb[0].setBounds(55,90,100,20);  
-        jb[1].setBounds(55,120,100,20);  
-        jb[2].setBounds(55,150,100,20);  
-        jb[3].setBounds(55,180,100,20);  
+        l.setForeground(Color.black);
+        jb[0].setBounds(55,120,100,20);  
+        jb[1].setBounds(55,170,100,20);  
+        jb[2].setBounds(55,220,100,20);  
+        jb[3].setBounds(55,270,100,20);  
         Font font = new Font("Verdana",Font.BOLD, 20);
         l.setFont(font);
         getContentPane().setLayout(null);
@@ -104,9 +165,12 @@ getContentPane().setLayout(null);
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         getContentPane().setLayout(null);
-        setLocation(250,100);  
+        
+        
+        
+        //setLocation(250,100);  
         setVisible(true);  
-        setSize(1154,734);  
+        //setSize(1154,734);  
     }  
     public void actionPerformed(ActionEvent e)  
     {  
@@ -141,6 +205,11 @@ getContentPane().setLayout(null);
         {  
         if(e.getActionCommand().equals("Bookmark"+y))  
         {  
+        	if(flag==1) {
+        		JOptionPane.showMessageDialog(contentPane,"Time is over. Click on result button to view the result");
+        		((JButton)e.getSource()).setEnabled(false);
+        	}
+        	else {
             if(check())  
                 count=count+1;  
             now=question_number;  
@@ -149,7 +218,7 @@ getContentPane().setLayout(null);
             ((JButton)e.getSource()).setEnabled(false);  
             question_number=now;  
         }  
-        }  
+        }  }
       
         if(e.getActionCommand().equals("Result"))  
         {  
@@ -160,62 +229,131 @@ getContentPane().setLayout(null);
             JOptionPane.showMessageDialog(this,"correct ans="+count);  
             System.exit(0);  
         }  
+        
     }  
     void questionset()  
-    {  
+    {
+    	l.setBounds(30,50,910,25);  
+        l.setForeground(Color.black);
+        jb[0].setBounds(55,120,100,20);  
+        jb[1].setBounds(55,170,100,20);  
+        jb[2].setBounds(55,220,100,20);  
+        jb[3].setBounds(55,270,100,20);
         jb[4].setSelected(true);  
         if(question_number==0)  
         {  
+        	
             l.setText("Que1: Which of the following is not a keyword in java?");  
-            jb[0].setText("private");jb[1].setText("Boolean");jb[2].setText("static");jb[3].setText("void");   
+            jb[0].setText("private");jb[1].setText("Boolean");jb[2].setText("static");jb[3].setText("void"); 
+            l.setBounds(30,50,910,25);  
+            l.setForeground(Color.black);
+            jb[0].setBounds(55,120,100,20);  
+            jb[1].setBounds(55,170,100,20);  
+            jb[2].setBounds(55,220,100,20);  
+            jb[3].setBounds(55,270,100,20);
         }  
         if(question_number==1)  
         {  
+        	
             l.setText("Que2: What is the size of boolean variable?");  
-            jb[0].setText("8 bit");jb[1].setText("32 bit");jb[2].setText("16 bit");jb[3].setText("None of the above");  
+            jb[0].setText("8 bit");jb[1].setText("32 bit");jb[2].setText("16 bit");jb[3].setText("None of the above");
+            l.setBounds(30,50,910,25);  
+            l.setForeground(Color.black);
+            jb[0].setBounds(55,120,100,20);  
+            jb[1].setBounds(55,170,100,20);  
+            jb[2].setBounds(55,220,100,20);  
+            jb[3].setBounds(55,270,100,20);
         }  
         if(question_number==2)  
         {  
+        	l.setBounds(30,50,910,25);  
+            l.setForeground(Color.black);
+            jb[0].setBounds(55,120,100,20);  
+            jb[1].setBounds(55,170,100,20);  
+            jb[2].setBounds(55,220,100,20);  
+            jb[3].setBounds(55,270,100,20);
             l.setText("Que3: What is the default value of byte variable?");  
-            jb[0].setText("0.0");jb[1].setText("null");jb[2].setText("undefined");jb[3].setText("0");  
+            jb[0].setText("0.0");jb[1].setText("null");jb[2].setText("undefined");jb[3].setText("0"); 
         }  
         if(question_number==3)  
         {  
             l.setText("Que4: String class is defined in which package?");  
             jb[0].setText("lang");jb[1].setText("Swing");jb[2].setText("Applet");jb[3].setText("awt");  
+            l.setBounds(30,50,910,25);  
+            l.setForeground(Color.black);
+            jb[0].setBounds(55,120,100,20);  
+            jb[1].setBounds(55,170,100,20);  
+            jb[2].setBounds(55,220,100,20);  
+            jb[3].setBounds(55,270,100,20);
         }  
         if(question_number==4)  
         {  
             l.setText("Que5: Which method must be implemented by all threads?");  
-            jb[0].setText("start()");jb[1].setText("stop()");jb[2].setText("run()");jb[3].setText("wait()");  
+            jb[0].setText("start()");jb[1].setText("stop()");jb[2].setText("run()");jb[3].setText("wait()");
+            l.setBounds(30,50,910,25);  
+            l.setForeground(Color.black);
+            jb[0].setBounds(55,120,100,20);  
+            jb[1].setBounds(55,170,100,20);  
+            jb[2].setBounds(55,220,100,20);  
+            jb[3].setBounds(55,270,100,20);
         }  
         if(question_number==5)  
         {  
             l.setText("Que6: java.util.Collections is a:");  
-            jb[0].setText("object");jb[1].setText("interface");jb[2].setText("class");jb[3].setText("none of the above");  
+            jb[0].setText("object");jb[1].setText("interface");jb[2].setText("class");jb[3].setText("none of the above");
+            l.setBounds(30,50,910,25);  
+            l.setForeground(Color.black);
+            jb[0].setBounds(55,120,100,20);  
+            jb[1].setBounds(55,170,100,20);  
+            jb[2].setBounds(55,220,100,20);  
+            jb[3].setBounds(55,270,100,20);
         }  
         if(question_number==6)  
         {  
             l.setText("Que7: Which one among these is not a class? ");  
             jb[0].setText("Swing");jb[1].setText("Actionperformed");jb[2].setText("ActionEvent");  
                         jb[3].setText("Button");  
+                        l.setBounds(30,50,910,25);  
+                        l.setForeground(Color.black);
+                        jb[0].setBounds(55,120,100,20);  
+                        jb[1].setBounds(55,170,100,20);  
+                        jb[2].setBounds(55,220,100,20);  
+                        jb[3].setBounds(55,270,100,20);
         }  
         if(question_number==7)  
         {  
             l.setText("Que8: Which one among these is not a function of Object class?");  
             jb[0].setText("toString");jb[1].setText("finalize");jb[2].setText("equals");  
-                        jb[3].setText("getDocumentBase");         
+                        jb[3].setText("getDocumentBase"); 
+                        l.setBounds(30,50,910,25);  
+                        l.setForeground(Color.black);
+                        jb[0].setBounds(55,120,100,20);  
+                        jb[1].setBounds(55,170,100,20);  
+                        jb[2].setBounds(55,220,100,20);  
+                        jb[3].setBounds(55,270,100,20);
         }  
         if(question_number==8)  
         {  
             l.setText("Que9: Which function is not present in Applet class?");  
             jb[0].setText("init");jb[1].setText("main");jb[2].setText("start");jb[3].setText("destroy");  
+            l.setBounds(30,50,910,25);  
+            l.setForeground(Color.black);
+            jb[0].setBounds(55,120,100,20);  
+            jb[1].setBounds(55,170,100,20);  
+            jb[2].setBounds(55,220,100,20);  
+            jb[3].setBounds(55,270,100,20);
         }  
         if(question_number==9)  
         {  
             l.setText("Que10: Which one among these is not a valid component?");  
             jb[0].setText("JButton");jb[1].setText("JList");jb[2].setText("JButtonGroup");  
                         jb[3].setText("JTextArea");  
+                        l.setBounds(30,50,910,25);  
+                        l.setForeground(Color.black);
+                        jb[0].setBounds(55,120,100,20);  
+                        jb[1].setBounds(55,170,100,20);  
+                        jb[2].setBounds(55,220,100,20);  
+                        jb[3].setBounds(55,270,100,20);
         }  
         
         for(int i=0,j=0;i<=90;i+=30,j++)  
