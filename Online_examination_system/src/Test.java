@@ -1,4 +1,6 @@
-import java.awt.*;  
+import java.awt.*; 
+import java.awt.Dimension;
+import java.awt.Font; 
 import java.awt.event.*;  
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;  
@@ -39,7 +41,7 @@ setContentPane(contentPane);
 getContentPane().setLayout(null);
         l=new JLabel();  
         getContentPane().add(l); 
-       // l.setSize(300,300);
+       //l.setSize(300,300);
         bg=new ButtonGroup();  
         for(int i=0;i<5;i++)  
         {  
@@ -85,22 +87,26 @@ getContentPane().setLayout(null);
         
         getContentPane().add(b1);getContentPane().add(b2);  
         questionset();  
-        l.setBounds(30,40,450,20);  
-        jb[0].setBounds(50,80,100,20);  
-        jb[1].setBounds(50,110,100,20);  
-        jb[2].setBounds(50,140,100,20);  
-        jb[3].setBounds(50,170,100,20);  
+        l.setBounds(30,50,910,25);  
+        l.setForeground(Color.white);
+        jb[0].setBounds(55,90,100,20);  
+        jb[1].setBounds(55,120,100,20);  
+        jb[2].setBounds(55,150,100,20);  
+        jb[3].setBounds(55,180,100,20);  
+        Font font = new Font("Verdana",Font.BOLD, 20);
+        l.setFont(font);
+        getContentPane().setLayout(null);
+        //l.setPreferredSize(new Dimension(450,700));
         
-        
-        b1.setBounds(272,242,150,41);  
-        b2.setBounds(69,242,150,41);
+        b1.setBounds(341,425,150,41);  
+        b2.setBounds(94,425,150,41);
         
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
-        getContentPane().setLayout(null);  
+        getContentPane().setLayout(null);
         setLocation(250,100);  
         setVisible(true);  
-        setSize(600,350);  
+        setSize(1154,734);  
     }  
     public void actionPerformed(ActionEvent e)  
     {  
@@ -160,19 +166,18 @@ getContentPane().setLayout(null);
         jb[4].setSelected(true);  
         if(question_number==0)  
         {  
-            l.setText("Que1: Which one among these is not a primitive datatype?");  
-            //l.setSize(300,300);
-            jb[0].setText("int");jb[1].setText("Float");jb[2].setText("boolean");jb[3].setText("char");   
+            l.setText("Que1: Which of the following is not a keyword in java?");  
+            jb[0].setText("private");jb[1].setText("Boolean");jb[2].setText("static");jb[3].setText("void");   
         }  
         if(question_number==1)  
         {  
-            l.setText("Que2: Which class is available to all the class automatically?");  
-            jb[0].setText("Swing");jb[1].setText("Applet");jb[2].setText("Object");jb[3].setText("ActionEvent");  
+            l.setText("Que2: What is the size of boolean variable?");  
+            jb[0].setText("8 bit");jb[1].setText("32 bit");jb[2].setText("16 bit");jb[3].setText("None of the above");  
         }  
         if(question_number==2)  
         {  
-            l.setText("Que3: Which package is directly available to our class without importing it?");  
-            jb[0].setText("swing");jb[1].setText("applet");jb[2].setText("net");jb[3].setText("lang");  
+            l.setText("Que3: What is the default value of byte variable?");  
+            jb[0].setText("0.0");jb[1].setText("null");jb[2].setText("undefined");jb[3].setText("0");  
         }  
         if(question_number==3)  
         {  
@@ -181,13 +186,13 @@ getContentPane().setLayout(null);
         }  
         if(question_number==4)  
         {  
-            l.setText("Que5: Which institute is best for java coaching?");  
-            jb[0].setText("Utek");jb[1].setText("Aptech");jb[2].setText("SSS IT");jb[3].setText("jtek");  
+            l.setText("Que5: Which method must be implemented by all threads?");  
+            jb[0].setText("start()");jb[1].setText("stop()");jb[2].setText("run()");jb[3].setText("wait()");  
         }  
         if(question_number==5)  
         {  
-            l.setText("Que6: Which one among these is not a keyword?");  
-            jb[0].setText("class");jb[1].setText("int");jb[2].setText("get");jb[3].setText("if");  
+            l.setText("Que6: java.util.Collections is a:");  
+            jb[0].setText("object");jb[1].setText("interface");jb[2].setText("class");jb[3].setText("none of the above");  
         }  
         if(question_number==6)  
         {  
@@ -197,13 +202,13 @@ getContentPane().setLayout(null);
         }  
         if(question_number==7)  
         {  
-            l.setText("Que8: which one among these is not a function of Object class?");  
+            l.setText("Que8: Which one among these is not a function of Object class?");  
             jb[0].setText("toString");jb[1].setText("finalize");jb[2].setText("equals");  
                         jb[3].setText("getDocumentBase");         
         }  
         if(question_number==8)  
         {  
-            l.setText("Que9: which function is not present in Applet class?");  
+            l.setText("Que9: Which function is not present in Applet class?");  
             jb[0].setText("init");jb[1].setText("main");jb[2].setText("start");jb[3].setText("destroy");  
         }  
         if(question_number==9)  
@@ -212,7 +217,7 @@ getContentPane().setLayout(null);
             jb[0].setText("JButton");jb[1].setText("JList");jb[2].setText("JButtonGroup");  
                         jb[3].setText("JTextArea");  
         }  
-        l.setBounds(30,40,450,20);  
+        
         for(int i=0,j=0;i<=90;i+=30,j++)  
             jb[j].setBounds(50,80+i,200,20);  
     }  

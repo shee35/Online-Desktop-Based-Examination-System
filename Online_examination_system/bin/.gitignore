@@ -6,6 +6,7 @@
 /Admin_info$5.class
 /Admin_info.class
 /Arrows-Back-icon.png
+/Bookmark-icon.png
 /Close-icon.png
 /Home$1.class
 /Home$2.class
@@ -16,7 +17,9 @@
 /HomeBg.jpg
 /InstructionPage$1.class
 /InstructionPage$2.class
+/InstructionPage$3.class
 /InstructionPage.class
+/Next-icon.png
 /StudentBg.jpg
 /StudentLogin.jpg
 /Student_info$1.class
@@ -25,11 +28,8 @@
 /Student_info$4.class
 /Student_info$5.class
 /Student_info.class
+/Test$1.class
+/Test.class
 /User-Interface-Login-icon.png
 /instructions.png
 /studentbg (2).jpg
-/Test$1.class
-/Test.class
-/Bookmark-icon.png
-/Next-icon.png
-/InstructionPage$3.class
