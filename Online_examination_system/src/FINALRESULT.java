@@ -57,8 +57,8 @@ public class FINALRESULT extends JFrame {
 		getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel(" FINAL RESULT BASED UPON YOUR PERFORMANCE");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblNewLabel.setBounds(10, 11, 713, 70);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblNewLabel.setBounds(10, 11, 842, 70);
 		getContentPane().add(lblNewLabel);
 		Image image2=new ImageIcon(this.getClass().getResource("/instructions.png")).getImage();
 		lblNewLabel.setIcon(new ImageIcon(image2));
@@ -76,7 +76,7 @@ public class FINALRESULT extends JFrame {
 		txtrreadTheQuestions.getCaret().setVisible(false);
 		//txtrreadTheQuestions.setText("\r\n ALL THE BEST\n\r");
 		
-		txtrreadTheQuestions.setBounds(10, 128, 713, 210);
+		txtrreadTheQuestions.setBounds(10, 128, 842, 210);
 		getContentPane().add(txtrreadTheQuestions);
 		
 		
