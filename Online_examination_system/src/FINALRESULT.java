@@ -12,7 +12,9 @@ import javax.swing.SwingConstants;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.EmptyBorder;
 import java.awt.Frame;
+import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Toolkit;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.BorderLayout;
@@ -35,6 +37,7 @@ public class FINALRESULT extends JFrame {
 			public void run() {
 				
 				try {
+					
 					FINALRESULT frame = new FINALRESULT();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -48,6 +51,10 @@ public class FINALRESULT extends JFrame {
 	}
 	
 	FINALRESULT( ){
+		
+	
+		
+		
 		setUndecorated(true);
 		getContentPane().setBackground(Color.WHITE);
 		getContentPane().setFont(new Font("Tahoma", Font.BOLD, 40));
@@ -57,27 +64,33 @@ public class FINALRESULT extends JFrame {
 		getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel(" FINAL RESULT BASED UPON YOUR PERFORMANCE");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblNewLabel.setBounds(10, 11, 842, 70);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblNewLabel.setBounds(10, 11, 713, 70);
 		getContentPane().add(lblNewLabel);
 		Image image2=new ImageIcon(this.getClass().getResource("/instructions.png")).getImage();
 		lblNewLabel.setIcon(new ImageIcon(image2));
 		
-		JTextArea txtrreadTheQuestions = new JTextArea();
-		txtrreadTheQuestions.setBackground(new Color(240, 128, 128));
-		txtrreadTheQuestions.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+		JTextArea result_frame = new JTextArea();
+		result_frame.setBackground(new Color(162, 236, 190));
+		result_frame.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
 		
-		txtrreadTheQuestions.setText("\r\n YOUR RESULT IS \r\n");
-	    
+		int ans = (Test.count)*3;
+		if(ans>=24) {
+		result_frame.setText("\r\n CONGRATULATIONS!! YOU HAVE PASSED THE EXAM WITH MARKS:\r\n");
+		}
+		else
+		{
+			result_frame.setText("\r\n SORRY!! YOU HAVE FAILED THE EXAM WITH MARKS:\r\n");	
+		}
+		result_frame.append("  "+ans +" ");
 		
-		txtrreadTheQuestions.append("  "+ans +" ");
 		
-		txtrreadTheQuestions.setCaretColor(txtrreadTheQuestions.getBackground());
-		txtrreadTheQuestions.getCaret().setVisible(false);
+		result_frame.setCaretColor(result_frame.getBackground());
+		result_frame.getCaret().setVisible(false);
 		//txtrreadTheQuestions.setText("\r\n ALL THE BEST\n\r");
 		
-		txtrreadTheQuestions.setBounds(10, 128, 842, 210);
-		getContentPane().add(txtrreadTheQuestions);
+		result_frame.setBounds(10, 128, 713, 210);
+		getContentPane().add(result_frame);
 		
 		
 		
@@ -95,9 +108,8 @@ public class FINALRESULT extends JFrame {
 		
 	}
 
-	/*public int display(int count) {
-		// TODO Auto-generated method stub
-		ans = count;
+	/*public static int display(int count) {
+		return ans = count;
 		
 	}*/
 }

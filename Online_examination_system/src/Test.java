@@ -228,12 +228,12 @@ class Test extends JFrame implements ActionListener
                 count=count+1;  
             question_number++;  
             time.stop();
-			Result r=new Result(count);
+		/*	Result r=new Result(count);
 			r.setBounds(100,100,1200,800);
 			r.setExtendedState(Frame.MAXIMIZED_BOTH);
 			r.setVisible(true);
 			dispose();
-			
+		*/	
 			FINALRESULT s = new FINALRESULT();
 			//s.display(count);
 		    s.setVisible(true);
