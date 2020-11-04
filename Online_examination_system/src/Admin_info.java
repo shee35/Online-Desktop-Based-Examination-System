@@ -105,8 +105,8 @@ public class Admin_info extends JFrame {
 				if(textField.getText().equals("Ranjana Vyas")&& textField_1.getText().equals("oom") &&
 						Arrays.equals( "password".toCharArray(), passwordField.getPassword() )){
 					dispose();
-					//Details_Page s = new Details_Page();
-					//s.setVisible(true);
+					Details_Page s = new Details_Page();
+					s.setVisible(true);
 				}
 				else {
 					JFrame j1 = new JFrame("invalid Details");

@@ -1,6 +1,4 @@
-import java.awt.*; 
-import java.awt.Dimension;
-import java.awt.Font; 
+import java.awt.*;
 import java.awt.event.*;  
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;  
@@ -222,12 +220,17 @@ class Test extends JFrame implements ActionListener
       
         if(e.getActionCommand().equals("Result"))  
         {  
-            if(check())  
+        	if(check())  
                 count=count+1;  
             question_number++;  
-           
-            JOptionPane.showMessageDialog(this,"correct ans="+count);  
-            System.exit(0);  
+            time.stop();
+			Result r=new Result(count);
+			r.setBounds(100,100,1200,800);
+			r.setExtendedState(Frame.MAXIMIZED_BOTH);
+			r.setVisible(true);
+			dispose();
+            //new Result(s).setVisible(true);
+            //JOptionPane.showMessageDialog(this,"correct ans="+count);  
         }  
         
     }  
