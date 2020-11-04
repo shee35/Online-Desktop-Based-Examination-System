@@ -213,4 +213,12 @@ public class Student_info extends JFrame {
 		contentPane.setLayout(gl_contentPane);
 		contentPane.setVisible(true);
 	}
+	
+	public ArrayList<String> gettername(){
+		return nameList;
+	}
+	public ArrayList<String> getterid(){
+		return idList;
+	}
+	
 }
