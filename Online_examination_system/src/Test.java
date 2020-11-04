@@ -19,7 +19,11 @@ class Test extends JFrame implements ActionListener
     public int sec=0;
     public int flag=0;
     Timer time;
-    int count=0,question_number=0,x=1,y=1,now=0;  
+    static int count=0;
+	int question_number=0;
+	int x=1;
+	int y=1;
+	int now=0;  
     int m[]=new int[10];   
     public Test() {
     	setLocationRelativeTo(this);
@@ -229,8 +233,12 @@ class Test extends JFrame implements ActionListener
 			r.setExtendedState(Frame.MAXIMIZED_BOTH);
 			r.setVisible(true);
 			dispose();
-            //new Result(s).setVisible(true);
-            //JOptionPane.showMessageDialog(this,"correct ans="+count);  
+			
+			FINALRESULT s = new FINALRESULT();
+			//s.display(count);
+		    s.setVisible(true);
+          //  new Result(s).setVisible(true);
+          // JOptionPane.showMessageDialog(this,"correct ans="+count);  
         }  
         
     }  
@@ -384,8 +392,12 @@ class Test extends JFrame implements ActionListener
             return(jb[1].isSelected());  
         if(question_number==9)  
             return(jb[2].isSelected());  
+        
         return false;  
     }  
+    public static int finalresult() {
+    	return count;
+    }
     public static void main(String s[])  
     {  
         new Test("ONLINE DESKTOP PORTAL");  

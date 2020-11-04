@@ -18,6 +18,8 @@ public class Result extends JFrame {
 		str=Integer.toString(count);
 		
 	}
+	int ans;
+	
 	public Result() {
 		setExtendedState(Frame.MAXIMIZED_BOTH);
 		//setUndecorated(true);
@@ -30,12 +32,16 @@ public class Result extends JFrame {
 //			                     g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);  
 //			                 }  
 		            };  
+		            
+		        	
+		    		
+		    		System.out.println(ans);
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setBounds(199, 50, 49, 14);
 		contentPane.add(lblNewLabel);
-		lblNewLabel.setText("Hello");
+		lblNewLabel.setText(ans+"");
 		contentPane.setVisible(true);
 		setContentPane(contentPane);
 		getContentPane().setLayout(null);
@@ -45,6 +51,10 @@ public class Result extends JFrame {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		
+		
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -55,5 +65,7 @@ public class Result extends JFrame {
 				}
 			}
 		});
+		
+	
 	}
 }
