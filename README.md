@@ -34,4 +34,11 @@ The project presentation has to be done by each member to show periodically the 
 UML diagrams:- Use Case diagram, Class diagram, CRC diagram(s), illustrating the design of your program. 
 All the Java source code is necessary to compile, execute and demonstrate.
 
+# Group Members:
+<table>
+  <tr>
+     <td align="center"><a href="https://github.com/Jyotika999"><img src="https://avatars0.githubusercontent.com/u/54600270?v=4" width="100px;" alt=""/><br /><sub><b>Incredible</b></sub></a><br /><a href="https://github.com/Elevate-Lab/Import-Template/commits?author=Jyotika999" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
 
