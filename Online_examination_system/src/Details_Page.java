@@ -86,7 +86,7 @@ public class Details_Page extends JFrame {
     lblNewLabel_3.setBounds(550, 33, 250, 25);
     contentPane.add(lblNewLabel_3);
     
-    lblNewLabel_4.setBounds(950, 33, 200, 25);
+    lblNewLabel_4.setBounds(850, 33, 200, 25);
     contentPane.add(lblNewLabel_4);
     
     JButton btnNewButton_1 = new JButton("Back");
@@ -101,7 +101,7 @@ public class Details_Page extends JFrame {
 	btnNewButton_1.setSize(140, 35);
 	Image image3=new ImageIcon(this.getClass().getResource("/Arrows-Back-icon.png")).getImage();
 	btnNewButton_1.setIcon(new ImageIcon(image3));
-	btnNewButton_1.setBounds(1200, 33, 140, 35);
+	btnNewButton_1.setBounds(1100, 33, 140, 35);
 	contentPane.add(btnNewButton_1);
 	
 	JButton btnNewButton_2 = new JButton("Exit");
@@ -114,7 +114,7 @@ public class Details_Page extends JFrame {
 	});
 	btnNewButton_2.setBackground(null);
 	btnNewButton_2.setFont(new Font("Times New Roman", Font.BOLD, 25));
-	btnNewButton_2.setBounds(1200, 75, 140, 35);
+	btnNewButton_2.setBounds(1100, 75, 140, 35);
 	Image image2=new ImageIcon(this.getClass().getResource("/Close-icon.png")).getImage();
 	btnNewButton_2.setIcon(new ImageIcon(image2));
 	contentPane.add(btnNewButton_2);
@@ -158,7 +158,7 @@ public class Details_Page extends JFrame {
     	if(result[i]>=8) {
     		res[i] = new JLabel("Pass");
         	x = (i+1)*50;
-        	res[i].setBounds(950, 33+ x, 250, 25);
+        	res[i].setBounds(850, 33+ x, 250, 25);
         	res[i].setForeground(Color.white);
         	res[i].setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
         	contentPane.add(res[i]);
@@ -166,7 +166,7 @@ public class Details_Page extends JFrame {
     	else {
     		res[i] = new JLabel("Fail");
         	x = (i+1)*50;
-        	res[i].setBounds(950, 33+ x, 250, 25);
+        	res[i].setBounds(850, 33+ x, 250, 25);
         	res[i].setForeground(Color.white);
         	res[i].setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
         	contentPane.add(res[i]);
