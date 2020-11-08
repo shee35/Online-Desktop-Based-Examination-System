@@ -37,7 +37,8 @@ All the Java source code is necessary to compile, execute and demonstrate.
 # Group Members:
 <table>
   <tr>
-     <td align="center"><a href="https://github.com/Jyotika999"><img src="https://avatars0.githubusercontent.com/u/54600270?v=4" width="100px;" alt=""/><br /><sub><b>Incredible</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/xxx32"><img src="https://avatars1.githubusercontent.com/u/58389098?s=400&u=f3f311649ce839abd0ea3fd57674a818030b5549&v=4" width="100px;" alt=""/><br /><sub><b>Aarushi</b></sub></a><br /></td>
+     <td align="center"><a href="https://github.com/Jyotika999"><img src="https://avatars0.githubusercontent.com/u/54600270?v=4" width="100px;" alt=""/><br /><sub><b>Jyotika</b></sub></a><br /></td>
 
  
  </tr>
