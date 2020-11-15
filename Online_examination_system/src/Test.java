@@ -11,7 +11,9 @@ class Test extends JFrame implements ActionListener
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	JLabel l;  
+	JLabel l; 
+	JLabel lblNewLabel_x;
+    JLabel lblNewLabel_y ;
     JRadioButton jb[]=new JRadioButton[5];   
     JButton b1,b2,btnNewButton_1;  
     ButtonGroup bg;  
@@ -20,6 +22,7 @@ class Test extends JFrame implements ActionListener
     public int flag=0;
     Timer time;
     static int count=0;
+    int weightage=0;
 	int question_number=0;
 	int x=1;
 	int y=1;
@@ -73,7 +76,7 @@ class Test extends JFrame implements ActionListener
 
     			@Override
     			public void actionPerformed(ActionEvent e) {
-    				// TODO Auto-generated method stub
+
     				lblNewLabel_4.setText(String.valueOf(sec));
     				lblNewLabel_3.setText(String.valueOf(min));
     				if(sec==60) {
@@ -104,6 +107,11 @@ class Test extends JFrame implements ActionListener
 
         l=new JLabel();  
         getContentPane().add(l); 
+        lblNewLabel_x = new JLabel();
+        lblNewLabel_y = new JLabel();
+        getContentPane().add(lblNewLabel_x);
+        getContentPane().add(lblNewLabel_y);
+
        //l.setSize(300,300);
         bg=new ButtonGroup();  
         for(int i=0;i<5;i++)  
@@ -150,14 +158,16 @@ class Test extends JFrame implements ActionListener
         
         getContentPane().add(b1);getContentPane().add(b2);  
         questionset();  
-        l.setBounds(30,50,910,25);  
+        /*l.setBounds(30,50,910,25);  
         l.setForeground(Color.black);
         jb[0].setBounds(55,120,100,20);  
         jb[1].setBounds(55,170,100,20);  
         jb[2].setBounds(55,220,100,20);  
-        jb[3].setBounds(55,270,100,20);  
+        jb[3].setBounds(55,270,100,20);  */
         Font font = new Font("Verdana",Font.BOLD, 20);
         l.setFont(font);
+        lblNewLabel_x.setFont(new Font("Tahoma", Font.BOLD, 15));
+        lblNewLabel_y.setFont(new Font("Tahoma", Font.BOLD, 15));
         getContentPane().setLayout(null);
         //l.setPreferredSize(new Dimension(450,700));
         
@@ -178,8 +188,10 @@ class Test extends JFrame implements ActionListener
     {  
         if(e.getSource()==b1)  
         {  
-            if(check())  
-                count=count+1;  
+        	if(check()) {
+        		getWeightage();
+        		count=count+weightage;  
+        	}
             question_number++;  
             questionset();    
             if(question_number==9)  
@@ -212,8 +224,10 @@ class Test extends JFrame implements ActionListener
         		((JButton)e.getSource()).setEnabled(false);
         	}
         	else {
-            if(check())  
-                count=count+1;  
+        		if(check()) {
+            		getWeightage();
+            		count=count+weightage;  
+            	}  
             now=question_number;  
             question_number=m[y];  
             questionset();  
@@ -224,8 +238,10 @@ class Test extends JFrame implements ActionListener
       
         if(e.getActionCommand().equals("Result"))  
         {  
-        	if(check())  
-                count=count+1;  
+        	if(check()) {
+        		getWeightage();
+        		count=count+weightage;  
+        	}
             question_number++;  
             time.stop();
 		/*	Result r=new Result(count);
@@ -250,125 +266,87 @@ class Test extends JFrame implements ActionListener
         jb[1].setBounds(55,170,100,20);  
         jb[2].setBounds(55,220,100,20);  
         jb[3].setBounds(55,270,100,20);
-        jb[4].setSelected(true);  
+        jb[4].setSelected(true); 
+        
+        lblNewLabel_x.setBounds(950, 105, 120, 20);
+        lblNewLabel_y.setBounds(950, 130, 120, 20);
+       
         if(question_number==0)  
         {  
         	
             l.setText("Que1: Which of the following is not a keyword in java?");  
             jb[0].setText("private");jb[1].setText("Boolean");jb[2].setText("static");jb[3].setText("void"); 
-            l.setBounds(30,50,910,25);  
-            l.setForeground(Color.black);
-            jb[0].setBounds(55,120,100,20);  
-            jb[1].setBounds(55,170,100,20);  
-            jb[2].setBounds(55,220,100,20);  
-            jb[3].setBounds(55,270,100,20);
+            lblNewLabel_x.setText("level: easy");
+            lblNewLabel_y.setText("marks: 3");
         }  
         if(question_number==1)  
         {  
-        	
             l.setText("Que2: What is the size of boolean variable?");  
             jb[0].setText("8 bit");jb[1].setText("32 bit");jb[2].setText("16 bit");jb[3].setText("None of the above");
-            l.setBounds(30,50,910,25);  
-            l.setForeground(Color.black);
-            jb[0].setBounds(55,120,100,20);  
-            jb[1].setBounds(55,170,100,20);  
-            jb[2].setBounds(55,220,100,20);  
-            jb[3].setBounds(55,270,100,20);
+            lblNewLabel_x.setText("level: easy");
+            lblNewLabel_y.setText("marks: 3");
         }  
         if(question_number==2)  
         {  
-        	l.setBounds(30,50,910,25);  
-            l.setForeground(Color.black);
-            jb[0].setBounds(55,120,100,20);  
-            jb[1].setBounds(55,170,100,20);  
-            jb[2].setBounds(55,220,100,20);  
-            jb[3].setBounds(55,270,100,20);
             l.setText("Que3: What is the default value of byte variable?");  
-            jb[0].setText("0.0");jb[1].setText("null");jb[2].setText("undefined");jb[3].setText("0"); 
+            jb[0].setText("0.0");jb[1].setText("null");jb[2].setText("undefined");jb[3].setText("0");
+            lblNewLabel_x.setText("level: easy");
+            lblNewLabel_y.setText("marks: 3");
         }  
         if(question_number==3)  
         {  
             l.setText("Que4: String class is defined in which package?");  
             jb[0].setText("lang");jb[1].setText("Swing");jb[2].setText("Applet");jb[3].setText("awt");  
-            l.setBounds(30,50,910,25);  
-            l.setForeground(Color.black);
-            jb[0].setBounds(55,120,100,20);  
-            jb[1].setBounds(55,170,100,20);  
-            jb[2].setBounds(55,220,100,20);  
-            jb[3].setBounds(55,270,100,20);
-        }  
+            lblNewLabel_x.setText("level: easy");
+            lblNewLabel_y.setText("marks: 3");
+        }
         if(question_number==4)  
         {  
             l.setText("Que5: Which method must be implemented by all threads?");  
             jb[0].setText("start()");jb[1].setText("stop()");jb[2].setText("run()");jb[3].setText("wait()");
-            l.setBounds(30,50,910,25);  
-            l.setForeground(Color.black);
-            jb[0].setBounds(55,120,100,20);  
-            jb[1].setBounds(55,170,100,20);  
-            jb[2].setBounds(55,220,100,20);  
-            jb[3].setBounds(55,270,100,20);
+            lblNewLabel_x.setText("level: medium");
+            lblNewLabel_y.setText("marks: 4");
         }  
         if(question_number==5)  
         {  
             l.setText("Que6: java.util.Collections is a:");  
             jb[0].setText("object");jb[1].setText("interface");jb[2].setText("class");jb[3].setText("none of the above");
-            l.setBounds(30,50,910,25);  
-            l.setForeground(Color.black);
-            jb[0].setBounds(55,120,100,20);  
-            jb[1].setBounds(55,170,100,20);  
-            jb[2].setBounds(55,220,100,20);  
-            jb[3].setBounds(55,270,100,20);
+            lblNewLabel_x.setText("level: medium");
+            lblNewLabel_y.setText("marks: 4");
         }  
         if(question_number==6)  
         {  
             l.setText("Que7: Which one among these is not a class? ");  
-            jb[0].setText("Swing");jb[1].setText("Actionperformed");jb[2].setText("ActionEvent");  
-                        jb[3].setText("Button");  
-                        l.setBounds(30,50,910,25);  
-                        l.setForeground(Color.black);
-                        jb[0].setBounds(55,120,100,20);  
-                        jb[1].setBounds(55,170,100,20);  
-                        jb[2].setBounds(55,220,100,20);  
-                        jb[3].setBounds(55,270,100,20);
+            jb[0].setText("Swing");jb[1].setText("Actionperformed");jb[2].setText("ActionEvent");  jb[3].setText("Button");  
+            lblNewLabel_x.setText("level: medium");
+            lblNewLabel_y.setText("marks: 4"); 
+                        
         }  
         if(question_number==7)  
         {  
             l.setText("Que8: Which one among these is not a function of Object class?");  
-            jb[0].setText("toString");jb[1].setText("finalize");jb[2].setText("equals");  
-                        jb[3].setText("getDocumentBase"); 
-                        l.setBounds(30,50,910,25);  
-                        l.setForeground(Color.black);
-                        jb[0].setBounds(55,120,100,20);  
-                        jb[1].setBounds(55,170,100,20);  
-                        jb[2].setBounds(55,220,100,20);  
-                        jb[3].setBounds(55,270,100,20);
+            jb[0].setText("toString");jb[1].setText("finalize");jb[2].setText("equals");jb[3].setText("getDocumentBase");   
+            lblNewLabel_x.setText("level: hard");
+            lblNewLabel_y.setText("marks: 5");
+                        
         }  
         if(question_number==8)  
         {  
             l.setText("Que9: Which function is not present in Applet class?");  
-            jb[0].setText("init");jb[1].setText("main");jb[2].setText("start");jb[3].setText("destroy");  
-            l.setBounds(30,50,910,25);  
-            l.setForeground(Color.black);
-            jb[0].setBounds(55,120,100,20);  
-            jb[1].setBounds(55,170,100,20);  
-            jb[2].setBounds(55,220,100,20);  
-            jb[3].setBounds(55,270,100,20);
+            jb[0].setText("init");jb[1].setText("main");jb[2].setText("start");jb[3].setText("destroy"); 
+            lblNewLabel_x.setText("level: hard");
+            lblNewLabel_y.setText("marks: 5");
         }  
         if(question_number==9)  
         {  
             l.setText("Que10: Which one among these is not a valid component?");  
-            jb[0].setText("JButton");jb[1].setText("JList");jb[2].setText("JButtonGroup");  
-                        jb[3].setText("JTextArea");  
-                        l.setBounds(30,50,910,25);  
-                        l.setForeground(Color.black);
-                        jb[0].setBounds(55,120,100,20);  
-                        jb[1].setBounds(55,170,100,20);  
-                        jb[2].setBounds(55,220,100,20);  
-                        jb[3].setBounds(55,270,100,20);
+            jb[0].setText("JButton");jb[1].setText("JList");jb[2].setText("JButtonGroup"); jb[3].setText("JTextArea");   
+            lblNewLabel_x.setText("level: hard");
+            lblNewLabel_y.setText("marks: 5");
         }  
         
-        for(int i=0,j=0;i<=90;i+=30,j++)  
-            jb[j].setBounds(50,80+i,200,20);  
+        //for(int i=0,j=0;i<=90;i+=30,j++)  
+          //  jb[j].setBounds(50,80+i,200,20);  
     }  
     boolean check()  
     {  
@@ -401,5 +379,17 @@ class Test extends JFrame implements ActionListener
     public static void main(String s[])  
     {  
         new Test("ONLINE DESKTOP PORTAL");  
-    }  
+    } 
+    
+    public void getWeightage() {
+    	if(question_number>=0 && question_number<=3) {
+    		weightage = 3;
+    	}
+    	else if(question_number>=4 && question_number<=6) {
+    		weightage = 4;
+    	}
+    	else if(question_number>=7 && question_number<=9) {
+    		weightage = 5;
+    	}
+    }
 }
