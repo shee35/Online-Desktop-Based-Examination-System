@@ -60,8 +60,10 @@ public class InstructionPage extends JFrame {
 		JTextArea txtrreadTheQuestions = new JTextArea();
 		txtrreadTheQuestions.setBackground(new Color(240, 128, 128));
 		txtrreadTheQuestions.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
-		txtrreadTheQuestions.setText("1.Read the questions properly\r\n2.Answer all the questions.\r\n3.NO NEGATIVE MARKING.\r\n4.Questions are of varying difficulties, 3 easy questions of 3 marks each, 4 medium\r\n   questions of 4 marks each , 3 diffiult questions of 5 marks each.\r\n5.Each question have 4 option out of which one or more options are correct.\r\n\r\nALL THE BEST!!");
-		txtrreadTheQuestions.setBounds(10, 128, 713, 210);
+		txtrreadTheQuestions.setText(" 1.Read the questions properly\r\n 2.Answer all the questions.\r\n 3.NO NEGATIVE MARKING.\r\n 4.Questions are of varying difficulties,"
+				+ " 3 easy questions of 3 marks each, 4 medium\r\n   questions of 4 marks each , 3 diffiult questions of 5 marks each.\r\n 5.Each question have 4 option"
+				+ " out of which one or more options are correct.\r\n 6.Your answer will only be considered if you click save button for each question.\r\n 7.If you move to next or bookmarked question, you can't return or access any\r\n   previous question.\r\n   ALL THE BEST!!");
+		txtrreadTheQuestions.setBounds(10, 128, 800, 240);
 		getContentPane().add(txtrreadTheQuestions);
 		
 		JButton btnNewButton = new JButton("Click here to Begin!");

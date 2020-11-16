@@ -15,11 +15,11 @@ class Test extends JFrame implements ActionListener
 	JLabel lblNewLabel_x;
     JLabel lblNewLabel_y ;
     JRadioButton jb[]=new JRadioButton[5];   
-    JButton b1,b2,btnNewButton_1;  
+    JButton b1,b2,btnNewButton_1,b3;  
     ButtonGroup bg;  
     public int min=0;
     public int sec=0;
-    public int flag=0;
+    public int flag=0,flag1=0;
     Timer time;
     static int count=0;
     int weightage=0;
@@ -124,14 +124,17 @@ class Test extends JFrame implements ActionListener
         b1.setFont(new Font("Times New Roman", Font.BOLD, 15));
         b2=new JButton("Bookmark");  
         b2.setFont(new Font("Times New Roman", Font.BOLD, 15));
+        b3=new JButton(" Save");  
+        b3.setFont(new Font("Times New Roman", Font.BOLD, 15));
         Image image3=new ImageIcon(this.getClass().getResource("/Next-icon.png")).getImage();
 		b1.setIcon(new ImageIcon(image3));
 		Image image4=new ImageIcon(this.getClass().getResource("/Bookmark-icon.png")).getImage();
 		b2.setIcon(new ImageIcon(image4));
-        
+		Image image5=new ImageIcon(this.getClass().getResource("/Save-icon.png")).getImage();
+		b3.setIcon(new ImageIcon(image5));
         b1.addActionListener(this);  
         b2.addActionListener(this); 
-        
+        b3.addActionListener(this); 
      /*   btnNewButton_1.setBackground(null);
 		btnNewButton_1.setIcon(null);
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -156,7 +159,8 @@ class Test extends JFrame implements ActionListener
 		contentPane.add(btnNewButton);
 	*/	
         
-        getContentPane().add(b1);getContentPane().add(b2);  
+        getContentPane().add(b1);getContentPane().add(b2);
+        getContentPane().add(b3);
         questionset();  
         /*l.setBounds(30,50,910,25);  
         l.setForeground(Color.black);
@@ -171,8 +175,9 @@ class Test extends JFrame implements ActionListener
         getContentPane().setLayout(null);
         //l.setPreferredSize(new Dimension(450,700));
         
-        b1.setBounds(341,425,150,41);  
+        b1.setBounds(588,425,150,41);  
         b2.setBounds(94,425,150,41);
+        b3.setBounds(341,425,150,41);
         
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
@@ -186,16 +191,30 @@ class Test extends JFrame implements ActionListener
     }  
     public void actionPerformed(ActionEvent e)  
     {  
-        if(e.getSource()==b1)  
-        {  
+    	if(e.getSource()==b3) {
         	if(check()) {
         		getWeightage();
         		count=count+weightage;  
-        	}
+        	} 
+//        	if(flag1==1)
+//        		question_number=now;
+        	b3.setEnabled(false);
+        }
+        if(e.getSource()==b1)  
+        {  
+        	b3.setEnabled(true);
+//        	if(check()) {
+//        		getWeightage();
+//        		count=count+weightage;  
+//        	}
+        	if(flag1==0) 
             question_number++;  
+        	else {
+              question_number=now+1;
+              flag1=0;}
             questionset();    
             if(question_number==9)  
-            {  
+            {
                 b1.setEnabled(false);  
                 b2.setText("Result");  
             }  
@@ -213,7 +232,8 @@ class Test extends JFrame implements ActionListener
             if(question_number==9)  
                 b2.setText("Result");  
             setVisible(false);  
-            setVisible(true);  
+            setVisible(true);
+            //bk.setEnabled(false);
         }  
         for(int i=0,y=1;i<x;i++,y++)  
         {  
@@ -224,24 +244,37 @@ class Test extends JFrame implements ActionListener
         		((JButton)e.getSource()).setEnabled(false);
         	}
         	else {
-        		if(check()) {
-            		getWeightage();
-            		count=count+weightage;  
-            	}  
-            now=question_number;  
-            question_number=m[y];  
-            questionset();  
+//        		if(question_number==9) {
+//        			if(check()) {
+//                		getWeightage();
+//                		count=count+weightage;  
+//                	} 
+//        		}
+//        		if(check()) {
+//            		getWeightage();
+//            		count=count+weightage;  
+//            	}
+        		flag1=1;
+        		now=question_number; 
+        		b3.setEnabled(true);
+        		question_number=m[y];  
+                questionset();  
+        		//question_number=now;
+                 
+            
             ((JButton)e.getSource()).setEnabled(false);  
-            question_number=now;  
-        }  
+             
+        } 
+        	//question_number=now; 
         }  }
-      
+        
         if(e.getActionCommand().equals("Result"))  
-        {  
-        	if(check()) {
-        		getWeightage();
-        		count=count+weightage;  
-        	}
+        { 
+//        	if(question_number==9) {
+//        	if(check()) {
+//        		getWeightage();
+//        		count=count+weightage;  
+//        	}}
             question_number++;  
             time.stop();
 		/*	Result r=new Result(count);
@@ -255,7 +288,8 @@ class Test extends JFrame implements ActionListener
 		    s.setVisible(true);
           //  new Result(s).setVisible(true);
           // JOptionPane.showMessageDialog(this,"correct ans="+count);  
-        }  
+        } 
+        
         
     }  
     void questionset()  

@@ -63,7 +63,7 @@ public class FINALRESULT extends JFrame {
 		setBounds(100,100,1500,1000);
 		getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel(" FINAL RESULT BASED UPON YOUR PERFORMANCE");
+		JLabel lblNewLabel = new JLabel(" FINAL RESULT");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 40));
 		lblNewLabel.setBounds(10, 11, 713, 70);
 		getContentPane().add(lblNewLabel);
