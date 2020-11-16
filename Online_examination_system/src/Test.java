@@ -198,11 +198,14 @@ class Test extends JFrame implements ActionListener
         	} 
 //        	if(flag1==1)
 //        		question_number=now;
+        	if(b2.getText()=="Bookmark")
+        		b2.setEnabled(false);
         	b3.setEnabled(false);
         }
         if(e.getSource()==b1)  
         {  
         	b3.setEnabled(true);
+        	b2.setEnabled(true);
 //        	if(check()) {
 //        		getWeightage();
 //        		count=count+weightage;  
