@@ -60,7 +60,7 @@ public class InstructionPage extends JFrame {
 		JTextArea txtrreadTheQuestions = new JTextArea();
 		txtrreadTheQuestions.setBackground(new Color(240, 128, 128));
 		txtrreadTheQuestions.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
-		txtrreadTheQuestions.setText("1.Read the questions properly\r\n2.Answer all the questions.\r\n3.NO NEGATIVE MARKING.\r\n4.Each question is of 3 marks.\r\n5.Each question have 4 option out of which one or more options are correct.\r\n6.Questions are organised on the basis of difficulty level with easy ones earlier\r\n   and gradually the level of question will increase.\r\nALL THE BEST!!");
+		txtrreadTheQuestions.setText("1.Read the questions properly\r\n2.Answer all the questions.\r\n3.NO NEGATIVE MARKING.\r\n4.Questions are of varying difficulties, 3 easy questions of 3 marks each, 4 medium\r\n   questions of 4 marks each , 3 diffiult questions of 5 marks each.\r\n5.Each question have 4 option out of which one or more options are correct.\r\n\r\nALL THE BEST!!");
 		txtrreadTheQuestions.setBounds(10, 128, 713, 210);
 		getContentPane().add(txtrreadTheQuestions);
 		

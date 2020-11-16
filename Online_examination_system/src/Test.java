@@ -262,10 +262,10 @@ class Test extends JFrame implements ActionListener
     {
     	l.setBounds(30,50,910,25);  
         l.setForeground(Color.black);
-        jb[0].setBounds(55,120,100,20);  
-        jb[1].setBounds(55,170,100,20);  
-        jb[2].setBounds(55,220,100,20);  
-        jb[3].setBounds(55,270,100,20);
+        jb[0].setBounds(55,120,150,20);  
+        jb[1].setBounds(55,170,150,20);  
+        jb[2].setBounds(55,220,150,20);  
+        jb[3].setBounds(55,270,150,20);
         jb[4].setSelected(true); 
         
         lblNewLabel_x.setBounds(950, 105, 120, 20);
