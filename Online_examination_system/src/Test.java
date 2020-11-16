@@ -297,8 +297,8 @@ class Test extends JFrame implements ActionListener
         {  
             l.setText("Que4: String class is defined in which package?");  
             jb[0].setText("lang");jb[1].setText("Swing");jb[2].setText("Applet");jb[3].setText("awt");  
-            lblNewLabel_x.setText("level: easy");
-            lblNewLabel_y.setText("marks: 3");
+            lblNewLabel_x.setText("level: medium");
+            lblNewLabel_y.setText("marks: 4");
         }
         if(question_number==4)  
         {  
@@ -382,10 +382,10 @@ class Test extends JFrame implements ActionListener
     } 
     
     public void getWeightage() {
-    	if(question_number>=0 && question_number<=3) {
+    	if(question_number>=0 && question_number<=2) {
     		weightage = 3;
     	}
-    	else if(question_number>=4 && question_number<=6) {
+    	else if(question_number>=3 && question_number<=6) {
     		weightage = 4;
     	}
     	else if(question_number>=7 && question_number<=9) {

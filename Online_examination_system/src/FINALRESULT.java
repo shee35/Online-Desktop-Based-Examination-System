@@ -75,7 +75,7 @@ public class FINALRESULT extends JFrame {
 		result_frame.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
 		
 		int ans = (Test.count);
-		if(ans>=27) {
+		if(ans>=24) {
 		result_frame.setText("\r\n CONGRATULATIONS!! YOU HAVE PASSED THE EXAM WITH MARKS:\r\n");
 		}
 		else
