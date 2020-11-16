@@ -65,7 +65,9 @@ public class InstructionPage extends JFrame {
 				+ " out of which one or more options are correct.\r\n 6.Your answer will only be considered if you click save button for each question.\r\n 7.If you move to next or bookmarked question, you can't return or access any\r\n   previous question.\r\n   ALL THE BEST!!");
 		txtrreadTheQuestions.setBounds(10, 128, 800, 240);
 		getContentPane().add(txtrreadTheQuestions);
-		
+
+		txtrreadTheQuestions.setCaretColor(txtrreadTheQuestions.getBackground());
+		txtrreadTheQuestions.getCaret().setVisible(false);
 		JButton btnNewButton = new JButton("Click here to Begin!");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
