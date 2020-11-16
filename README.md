@@ -29,10 +29,6 @@ Various Fields are:
 * Total Marks
 * Result(Correct/Incorrect)
 
-## Submission
-The project presentation has to be done by each member to show periodically the progress and the complete project submission should contain the following:
-UML diagrams:- Use Case diagram, Class diagram, CRC diagram(s), illustrating the design of your program. 
-All the Java source code is necessary to compile, execute and demonstrate.
 
 # Group Members:
 <table>
