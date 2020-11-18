@@ -155,7 +155,7 @@ public class Details_Page extends JFrame {
     	contentPane.add(correctans[i]);
     	
     	// for displaying final result
-    	if(FINALRESULT.results[i]>=8) {
+    	if(FINALRESULT.results[i]>=24) {
     		res[i] = new JLabel("Pass");
         	x = (i+1)*50;
         	res[i].setBounds(850, 33+ x, 250, 25);
