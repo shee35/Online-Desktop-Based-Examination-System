@@ -58,6 +58,7 @@ public class Admin_info extends JFrame {
 	 * Create the frame.
 	 */
 	public Admin_info() {
+		setUndecorated(true);
 		setExtendedState(Frame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1200, 800);
