@@ -21,7 +21,6 @@ class Test extends JFrame implements ActionListener
     public int sec=0;
     public int flag=0,flag1=0;
     Timer time;
-    static int count=0;
     int weightage=0;
 	int question_number=0;
 	int x=1;
@@ -194,7 +193,7 @@ class Test extends JFrame implements ActionListener
     	if(e.getSource()==b3) {
         	if(check()) {
         		getWeightage();
-        		count=count+weightage;  
+        		Student_info.count[Student_info.find]= Student_info.count[Student_info.find]+weightage;  
         	} 
 //        	if(flag1==1)
 //        		question_number=now;
@@ -284,8 +283,8 @@ class Test extends JFrame implements ActionListener
 			r.setBounds(100,100,1200,800);
 			r.setExtendedState(Frame.MAXIMIZED_BOTH);
 			r.setVisible(true);
-			dispose();
-		*/	
+			
+		*/	dispose();
 			FINALRESULT s = new FINALRESULT();
 			//s.display(count);
 		    s.setVisible(true);
@@ -410,9 +409,6 @@ class Test extends JFrame implements ActionListener
         
         return false;  
     }  
-    public static int finalresult() {
-    	return count;
-    }
     public static void main(String s[])  
     {  
         new Test("ONLINE DESKTOP PORTAL");  

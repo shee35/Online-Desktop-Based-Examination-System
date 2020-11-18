@@ -29,7 +29,8 @@ public class FINALRESULT extends JFrame {
 	 * 
 	 */
 	
-    static int ans;
+    int ans;
+    static Integer[] results= new Integer[4];
 	private static final long serialVersionUID = 1L;
 	
 	public static void main(String[] args) {
@@ -74,7 +75,7 @@ public class FINALRESULT extends JFrame {
 		result_frame.setBackground(new Color(162, 236, 190));
 		result_frame.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
 		
-		int ans = (Test.count);
+		int ans = Student_info.count[Student_info.find];
 		if(ans>=24) {
 		result_frame.setText("\r\n CONGRATULATIONS!! YOU HAVE PASSED THE EXAM WITH MARKS:\r\n");
 		}
@@ -84,7 +85,9 @@ public class FINALRESULT extends JFrame {
 		}
 		result_frame.append("  "+ans +" ");
 		
-		
+		for(int i=0;i<4;i++) {
+			results[i]= Student_info.count[i];
+		}
 		result_frame.setCaretColor(result_frame.getBackground());
 		result_frame.getCaret().setVisible(false);
 		//txtrreadTheQuestions.setText("\r\n ALL THE BEST\n\r");
@@ -97,9 +100,7 @@ public class FINALRESULT extends JFrame {
 		JButton btnNewButton_1 = new JButton("Exit the Portal");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int x=JOptionPane.showConfirmDialog(null,"Do you want to exit the Portal?","Select",JOptionPane.YES_NO_OPTION);
-				if(x==0)
-					System.exit(0);
+				dispose();
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 20));

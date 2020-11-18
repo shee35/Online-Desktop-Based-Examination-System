@@ -75,7 +75,7 @@ public class Details_Page extends JFrame {
 	
 	ArrayList<String> names = new Student_info().gettername();
 	ArrayList<String> Id_s = new Student_info().getterid();
-	Integer[] result = new Student_info().getanswers();
+	//Integer[] result = new Student_info().getanswers();
 	
 	lblNewLabel_1.setBounds(100, 33, 200, 25);
     contentPane.add(lblNewLabel_1);
@@ -147,7 +147,7 @@ public class Details_Page extends JFrame {
     
     // for displaying correct answers
     for(int i=0;i<correctans.length; i++) {
-    	correctans[i] = new JLabel(result[i].toString());
+    	correctans[i] = new JLabel(FINALRESULT.results[i].toString());
     	x = (i+1)*50;
     	correctans[i].setBounds(550, 33+ x, 250, 25);
     	correctans[i].setForeground(Color.white);
@@ -155,7 +155,7 @@ public class Details_Page extends JFrame {
     	contentPane.add(correctans[i]);
     	
     	// for displaying final result
-    	if(result[i]>=8) {
+    	if(FINALRESULT.results[i]>=8) {
     		res[i] = new JLabel("Pass");
         	x = (i+1)*50;
         	res[i].setBounds(850, 33+ x, 250, 25);

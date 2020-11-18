@@ -45,7 +45,8 @@ public class Student_info extends JFrame {
 	ArrayList<String> nameList;
 	ArrayList<String> idList;
 	ArrayList<String> passList;
-	Integer[] no_of_correct_answers;
+	static Integer[] count;
+	static int find;
 	/**
 	 * Launch the application.
 	 */
@@ -67,12 +68,12 @@ public class Student_info extends JFrame {
 	 */
 	public Student_info() {
 		
-		nameList = new ArrayList<String>(); nameList.add("aarushi"); nameList.add("vidushi");nameList.add("medha");nameList.add("jyotika");
-		passList = new ArrayList<String>(); passList.add("xxx32"); passList.add("medhullah"); passList.add("shinchan"); passList.add("doraemon");
-		idList = new ArrayList<String>(); idList.add("iit2019032"); idList.add("iit2019027");idList.add("iit2019021"); idList.add("iit2019036");
-		no_of_correct_answers= new Integer[nameList.size()];
+		nameList = new ArrayList<String>(); nameList.add("medha");nameList.add("vidushi");nameList.add("aarushi"); nameList.add("jyotika");
+		passList = new ArrayList<String>();  passList.add("shinchan"); passList.add("medhullah"); passList.add("xxx32"); passList.add("doraemon");
+		idList = new ArrayList<String>(); idList.add("iit2019021"); idList.add("iit2019027");idList.add("iit2019032"); idList.add("iit2019036");
+		count = new Integer[nameList.size()];
 		for(int i=0;i<nameList.size(); i++) {
-			no_of_correct_answers[i]=0;
+			count[i]=0;
 		}
 		
 		setUndecorated(true);
@@ -124,14 +125,14 @@ public class Student_info extends JFrame {
 				String b = textField_1.getText();
 				char[] c = passwordField.getPassword();
 				if(nameList.contains(a)) {
-					int find = nameList.indexOf(a);
+					find = nameList.indexOf(a);
 					String xx = passList.get(find);
 					if(idList.get(find).equals(b) && Arrays.equals(xx.toCharArray(), c)){
-						dispose();
+						//dispose();
 						InstructionPage s = new InstructionPage();
 						s.setVisible(true);
+						textField.setText("");textField_1.setText("");passwordField.setText("");
 						// to get the correct answers
-						no_of_correct_answers[find]= Test.count;
 					}
 					else {
 						JFrame j1 = new JFrame("invalid Details");
@@ -226,8 +227,5 @@ public class Student_info extends JFrame {
 	}
 	public ArrayList<String> getterid(){
 		return idList;
-	}
-	public Integer[] getanswers() {
-		return no_of_correct_answers;
 	}
 }
