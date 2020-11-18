@@ -37,6 +37,7 @@ class Test extends JFrame implements ActionListener
     	
     	
         super(s);  
+        setUndecorated(true);
         setExtendedState(Frame.MAXIMIZED_BOTH);
         contentPane = new JPanel(){  
 //            public void paintComponent(Graphics g) {  

@@ -44,6 +44,7 @@ public class Details_Page extends JFrame {
 	}
 	
 	public Details_Page() {
+		setUndecorated(true);
 		setExtendedState(Frame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1200, 800);
@@ -147,7 +148,11 @@ public class Details_Page extends JFrame {
     
     // for displaying correct answers
     for(int i=0;i<correctans.length; i++) {
-    	correctans[i] = new JLabel(FINALRESULT.results[i].toString());
+    	try {
+    	correctans[i] = new JLabel(FINALRESULT.results[i].toString());}
+    	catch(Exception e) {
+    		correctans[i] = new JLabel(Student_info.count[i].toString());
+    	}
     	x = (i+1)*50;
     	correctans[i].setBounds(550, 33+ x, 250, 25);
     	correctans[i].setForeground(Color.white);
@@ -155,6 +160,7 @@ public class Details_Page extends JFrame {
     	contentPane.add(correctans[i]);
     	
     	// for displaying final result
+    	try {
     	if(FINALRESULT.results[i]>=24) {
     		res[i] = new JLabel("Pass");
         	x = (i+1)*50;
@@ -170,6 +176,24 @@ public class Details_Page extends JFrame {
         	res[i].setForeground(Color.white);
         	res[i].setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
         	contentPane.add(res[i]);
+    	}}
+    	catch(Exception e) {
+    		if(Student_info.count[i]>=24) {
+        		res[i] = new JLabel("Pass");
+            	x = (i+1)*50;
+            	res[i].setBounds(850, 33+ x, 250, 25);
+            	res[i].setForeground(Color.white);
+            	res[i].setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+            	contentPane.add(res[i]);
+        	}
+        	else {
+        		res[i] = new JLabel("Fail");
+            	x = (i+1)*50;
+            	res[i].setBounds(850, 33+ x, 250, 25);
+            	res[i].setForeground(Color.white);
+            	res[i].setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+            	contentPane.add(res[i]);
+        	}
     	}
     }
 	}
