@@ -25,18 +25,18 @@ The Software should serve the purpose of examining the students and their Result
 The Admin can see the registered students and their marks after thay have attempted the test.
 The Student can give the test and after submitting his answers, he can check his result at the same time.
 
-## Entering Questions: Various Fields are:
+**Entering Questions: Various Fields are:**
 * Questions
 * Options (4)
 * Correct Answer
 
-## Student Taking Exam Screen: 
+**Student Taking Exam Screen:** 
 Various Fields are:
 * Display Of Question With Options
 * Control Buttons To switch questions
 * A button to bookmark the question
 
-## Result Displaying Screen: 
+**Result Displaying Screen:**
 Various Fields are:
 * Total Marks
 * Result(Correct/Incorrect)
