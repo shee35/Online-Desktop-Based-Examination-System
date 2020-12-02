@@ -18,8 +18,12 @@ Java, Swing, JSF and XML
  
  </tr>
 </table>
+
+
 ## Functional components of the project
-The Software should serve the purpose of examining the students Online and 
+The Software should serve the purpose of examining the students and their Result computation.
+The Admin can see the registered students and their marks after thay have attempted the test.
+The Student can give the test and after submitting his answers, he can check his result at the same time.
 
 ## Entering Questions: Various Fields are:
 * Questions
