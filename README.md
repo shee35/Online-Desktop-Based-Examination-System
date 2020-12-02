@@ -13,7 +13,7 @@ Java, Swing, JSF and XML
   <tr>
      <td align="center"><img src="uml_diagram.jpeg" width="500px;" alt=""/><br /><sub><b>UML DIAGRAM</b></sub></a><br /></td>
      <td align="center"><img src="class_diagram.jpeg" width="500px;" alt=""/><br /><sub><b>CLASS DIAGRAM</b></sub></a><br /></td>
-     <td align="center"><img src="crc_diagram.jpeg" width="500px;" alt=""/><br /><sub><b>CRC DIAGRAM</b></sub></a><br /></td>
+     <td align="center"><img src="CRC diagram (1).jpeg" width="500px;" alt=""/><br /><sub><b>CRC DIAGRAM</b></sub></a><br /></td>
 
  
  </tr>
