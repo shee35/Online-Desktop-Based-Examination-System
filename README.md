@@ -1,9 +1,9 @@
-# Online-Desktop-Based-Examination-System 
+# Online-Desktop-Based-Examination-System :hotel:
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Abstract 
 
-In this project, we have designed and developed Software for Online Examination System in which there are given 10 questions to play. User can bookmark any question for the reconsideration while going to result and can go to the next question by clicking the next button .Online Exams System fulfills the requirements of the institutes to conduct the exams online. We are using here java array to store the questions, options and answers and not using database technology.  With the use of swing frames as container and buttons and checkboxes as their component, we have made this Project more enhancing. Software provides the options to students to select the Questions with increasing complexity levels if they want to achieve higher points resulting into better Grades, thus the software makes it possible to provide three levels of Questions as per complexity levels of Good, Tough and Complex ones. The scores are accordingly provided to the students with rules (For Example) the  Best grades can only be achieved either by scoring more than 80 % correct responses of Good Questions and 25 % and 10 % each correct responses from Tough and Complex Questions.  But Students can also correctly answer larger Questions from Tough and Complex Questions thus reducing the requirements of correctly answering the Questions from Good Questions. Thus, we have formulated appropriate Rules for this provision.
+In this project, we have designed and developed Software for Online Examination System in which there are given 10 questions to play. User can bookmark :bookmark::bookmark:any question for the reconsideration while going to result and can go to the next question by clicking the next button .Online Exams System fulfills the requirements of the institutes to conduct the exams online. We are using here java array to store the questions, options and answers and not using database technology.  With the use of swing frames as container and buttons and checkboxes as their component, we have made this Project more enhancing. Software provides the options to students to select the Questions with increasing complexity levels if they want to achieve higher points resulting into better Grades, thus the software makes it possible to provide three levels of Questions as per complexity levels of Good, Tough and Complex ones. The scores are accordingly provided to the students with rules (For Example) the  Best grades can only be achieved either by scoring more than 80 % correct responses of Good Questions and 25 % and 10 % each correct responses from Tough and Complex Questions.  But Students can also correctly answer larger Questions from Tough and Complex Questions thus reducing the requirements of correctly answering the Questions from Good Questions. Thus, we have formulated appropriate Rules for this provision.
 
 ## Specific Technology
 Java, Swing, JSF and XML
@@ -32,9 +32,9 @@ The Student can give the test and after submitting his answers, he can check his
 
 **Student Taking Exam Screen:** 
 Various Fields are:
-* Display Of Question With Options
-* Control Buttons To switch questions
-* A button to bookmark the question
+* :boom: Display Of Question With Options
+* :boom: Control Buttons To switch questions
+* :boom: A button to bookmark the question
 
 **Result Displaying Screen:**
 Various Fields are:
