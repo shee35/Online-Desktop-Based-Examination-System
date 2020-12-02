@@ -97,12 +97,6 @@ public class Home extends JFrame {
 		btnNewButton.setIcon(new ImageIcon(image1));
 		contentPane.add(btnNewButton);
 		
-//		JLabel lblNewLabel = new JLabel("Online Examination System");
-//		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 34));
-//		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-//		
-//		JButton btnNewButton = new JButton("ADMIN");
-//		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 27));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -110,8 +104,6 @@ public class Home extends JFrame {
 				k.setVisible(true);
 			}
 		});
-//		
-//		JButton btnNewButton_1 = new JButton("STUDENT");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -119,61 +111,6 @@ public class Home extends JFrame {
 				s.setVisible(true);
 			}
 		});
-//		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 27));
-//		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-//		gl_contentPane.setHorizontalGroup(
-//			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-//				.addGroup(gl_contentPane.createSequentialGroup()
-//					.addContainerGap()
-//					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 795, GroupLayout.PREFERRED_SIZE)
-//					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-//				.addGroup(gl_contentPane.createSequentialGroup()
-//					.addGap(269)
-//					.addComponent(btnNewButton_1, GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-//					.addGap(266))
-//				.addGroup(gl_contentPane.createSequentialGroup()
-//					.addGap(282)
-//					.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-//					.addGap(267))
-//		);
-//		gl_contentPane.setVerticalGroup(
-//			gl_contentPane.createParallelGroup(Alignment.LEADING)
-//				.addGroup(gl_contentPane.createSequentialGroup()
-//					.addComponent(lblNewLabel)
-//					.addGap(112)
-//					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
-//					.addGap(73)
-//					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-//					.addContainerGap(142, Short.MAX_VALUE))
-//		);
-//		contentPane.setLayout(gl_contentPane);
-//		
-//		
-//		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 27));
-//		GroupLayout gl_contentPane2 = new GroupLayout(contentPane);
-//		gl_contentPane2.setHorizontalGroup(
-//			gl_contentPane2.createParallelGroup(Alignment.LEADING)
-//				.addGroup(gl_contentPane2.createSequentialGroup()
-//					.addContainerGap()
-//					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 795, GroupLayout.PREFERRED_SIZE)
-//					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-//				.addGroup(Alignment.TRAILING, gl_contentPane2.createSequentialGroup()
-//					.addGap(269)
-//					.addGroup(gl_contentPane2.createParallelGroup(Alignment.TRAILING)
-//						.addComponent(btnNewButton_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-//						.addComponent(btnNewButton, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-//					.addGap(266))
-//		);
-//		gl_contentPane2.setVerticalGroup(
-//			gl_contentPane2.createParallelGroup(Alignment.LEADING)
-//				.addGroup(gl_contentPane2.createSequentialGroup()
-//					.addComponent(lblNewLabel)
-//					.addGap(109)
-//					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
-//					.addGap(76)
-//					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-//					.addContainerGap(142, Short.MAX_VALUE))
-//		);
-//		contentPane.setLayout(gl_contentPane2);
+
 	}
 }

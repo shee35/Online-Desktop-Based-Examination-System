@@ -47,8 +47,6 @@ public class FINALRESULT extends JFrame {
 			}
 		});
 		
-		
-		
 	}
 	
 	FINALRESULT( ){
@@ -109,8 +107,4 @@ public class FINALRESULT extends JFrame {
 		
 	}
 
-	/*public static int display(int count) {
-		return ans = count;
-		
-	}*/
 }

@@ -6,9 +6,6 @@ import javax.swing.border.EmptyBorder;
 class Test extends JFrame implements ActionListener  
 {  
 	
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	JLabel l; 
@@ -40,11 +37,6 @@ class Test extends JFrame implements ActionListener
         setUndecorated(true);
         setExtendedState(Frame.MAXIMIZED_BOTH);
         contentPane = new JPanel(){  
-//            public void paintComponent(Graphics g) {  
-//              Image img = Toolkit.getDefaultToolkit().getImage(  
-//                        Home.class.getResource("/HomeBg.jpg"));  
-//                 g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);  
-//             } 
         };
         // CODE FOR TIMER STARTS
         	JLabel lblNewLabel = new JLabel("Total Time:");
@@ -112,7 +104,6 @@ class Test extends JFrame implements ActionListener
         getContentPane().add(lblNewLabel_x);
         getContentPane().add(lblNewLabel_y);
 
-       //l.setSize(300,300);
         bg=new ButtonGroup();  
         for(int i=0;i<5;i++)  
         {  
@@ -135,45 +126,16 @@ class Test extends JFrame implements ActionListener
         b1.addActionListener(this);  
         b2.addActionListener(this); 
         b3.addActionListener(this); 
-     /*   btnNewButton_1.setBackground(null);
-		btnNewButton_1.setIcon(null);
-		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_1.setBounds(800, 42, 154, 58);
-		Image image2=new ImageIcon(this.getClass().getResource("/Admin-icon.png")).getImage();
-		btnNewButton_1.setIcon(new ImageIcon(image2));
-		add(btnNewButton_1);
-		btnNewButton_2.setBackground(null);
-		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_2.setBounds(1000, 42, 154, 58);
-		Image image3=new ImageIcon(this.getClass().getResource("/Close-icon.png")).getImage();
-		btnNewButton_2.setIcon(new ImageIcon(image3));
-		contentPane.add(btnNewButton_2);
-		
-		JButton btnNewButton = new JButton(""); 
-		btnNewButton.setBackground(null);
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton.setIcon(null);
-		btnNewButton.setBounds(600, 42, 154, 58);
-		Image image1=new ImageIcon(this.getClass().getResource("/StudentLogin.jpg")).getImage();
-		btnNewButton.setIcon(new ImageIcon(image1));
-		contentPane.add(btnNewButton);
-	*/	
-        
+     
         getContentPane().add(b1);getContentPane().add(b2);
         getContentPane().add(b3);
         questionset();  
-        /*l.setBounds(30,50,910,25);  
-        l.setForeground(Color.black);
-        jb[0].setBounds(55,120,100,20);  
-        jb[1].setBounds(55,170,100,20);  
-        jb[2].setBounds(55,220,100,20);  
-        jb[3].setBounds(55,270,100,20);  */
+       
         Font font = new Font("Verdana",Font.BOLD, 20);
         l.setFont(font);
         lblNewLabel_x.setFont(new Font("Tahoma", Font.BOLD, 15));
         lblNewLabel_y.setFont(new Font("Tahoma", Font.BOLD, 15));
         getContentPane().setLayout(null);
-        //l.setPreferredSize(new Dimension(450,700));
         
         b1.setBounds(588,425,150,41);  
         b2.setBounds(94,425,150,41);
@@ -182,12 +144,8 @@ class Test extends JFrame implements ActionListener
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         getContentPane().setLayout(null);
-        
-        
-        
-        //setLocation(250,100);  
-        setVisible(true);  
-        //setSize(1154,734);  
+         
+        setVisible(true);    
     }  
     public void actionPerformed(ActionEvent e)  
     {  
@@ -196,8 +154,6 @@ class Test extends JFrame implements ActionListener
         		getWeightage();
         		Student_info.count[Student_info.find]= Student_info.count[Student_info.find]+weightage;  
         	} 
-//        	if(flag1==1)
-//        		question_number=now;
         	if(b2.getText()=="Bookmark")
         		b2.setEnabled(false);
         	b3.setEnabled(false);
@@ -206,10 +162,6 @@ class Test extends JFrame implements ActionListener
         {  
         	b3.setEnabled(true);
         	b2.setEnabled(true);
-//        	if(check()) {
-//        		getWeightage();
-//        		count=count+weightage;  
-//        	}
         	if(flag1==0) 
             question_number++;  
         	else {
@@ -236,7 +188,6 @@ class Test extends JFrame implements ActionListener
                 b2.setText("Result");  
             setVisible(false);  
             setVisible(true);
-            //bk.setEnabled(false);
         }  
         for(int i=0,y=1;i<x;i++,y++)  
         {  
@@ -247,50 +198,25 @@ class Test extends JFrame implements ActionListener
         		((JButton)e.getSource()).setEnabled(false);
         	}
         	else {
-//        		if(question_number==9) {
-//        			if(check()) {
-//                		getWeightage();
-//                		count=count+weightage;  
-//                	} 
-//        		}
-//        		if(check()) {
-//            		getWeightage();
-//            		count=count+weightage;  
-//            	}
         		flag1=1;
         		now=question_number; 
         		b3.setEnabled(true);
         		question_number=m[y];  
                 questionset();  
-        		//question_number=now;
                  
             
             ((JButton)e.getSource()).setEnabled(false);  
              
         } 
-        	//question_number=now; 
         }  }
         
         if(e.getActionCommand().equals("Result"))  
         { 
-//        	if(question_number==9) {
-//        	if(check()) {
-//        		getWeightage();
-//        		count=count+weightage;  
-//        	}}
             question_number++;  
             time.stop();
-		/*	Result r=new Result(count);
-			r.setBounds(100,100,1200,800);
-			r.setExtendedState(Frame.MAXIMIZED_BOTH);
-			r.setVisible(true);
-			
-		*/	dispose();
+			dispose();
 			FINALRESULT s = new FINALRESULT();
-			//s.display(count);
-		    s.setVisible(true);
-          //  new Result(s).setVisible(true);
-          // JOptionPane.showMessageDialog(this,"correct ans="+count);  
+		    s.setVisible(true);  
         } 
         
         
@@ -381,9 +307,7 @@ class Test extends JFrame implements ActionListener
             lblNewLabel_x.setText("level: hard");
             lblNewLabel_y.setText("marks: 5");
         }  
-        
-        //for(int i=0,j=0;i<=90;i+=30,j++)  
-          //  jb[j].setBounds(50,80+i,200,20);  
+          
     }  
     boolean check()  
     {  
